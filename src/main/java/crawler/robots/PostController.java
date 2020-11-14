@@ -33,6 +33,7 @@ public class PostController {
             if(noticia.getUrlNoticia().indexOf("twitter.com") != -1 
             || noticia.getUrlNoticia().indexOf("youtube.com") != -1 
             || noticia.getUrlNoticia().indexOf("facebook.com") != -1
+            || noticia.getUrlNoticia().indexOf("wikipedia.org") != -1
             || noticia.getMateria().indexOf('#'+noticia.getTagTwitter()) != -1
             || !noticia.getSanitizada())
                 continue;

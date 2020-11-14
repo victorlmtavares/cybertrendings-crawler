@@ -1,12 +1,18 @@
 package crawler.robots;
 
 import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpHeaders;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -26,17 +32,19 @@ public class GoogleController {
     }
 
     public List<Noticia> fetch(){
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-        .uri(URI.create("https://rapidapi.p.rapidapi.com/google-serps/?q=" 
+
+        HttpClient client = HttpClients.createMinimal();
+
+        try {            
+            HttpGet request = new HttpGet(URI.create("https://rapidapi.p.rapidapi.com/google-serps/?q=" 
             + this.trendingTopic.getTagEncoded() 
-            + "&pages=1&gl=br&hl=pt-BR&duration=d&autocorrect=1"))
-		.header("x-rapidapi-host", "google-search5.p.rapidapi.com")
-		.header("x-rapidapi-key", "49a37b3e8emshf52c4aaf1519130p1aacecjsn51380c946174")
-		.method("GET", HttpRequest.BodyPublishers.noBody())
-		.build();
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            this.parseJson(response.body());
+            + "&pages=1&gl=br&hl=pt-BR&duration=d&autocorrect=1"));
+            request.addHeader("x-rapidapi-host", "google-search5.p.rapidapi.com");
+            request.addHeader("x-rapidapi-key", "49a37b3e8emshf52c4aaf1519130p1aacecjsn51380c946174");
+            request.addHeader(HttpHeaders.USER_AGENT, "Googlebot"); 
+            HttpResponse response = client.execute(request);
+            HttpEntity entity = response.getEntity();
+            this.parseJson(EntityUtils.toString(entity));
             return this.noticias;      
         }catch ( Exception ex ) {
             ex.printStackTrace();

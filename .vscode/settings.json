@@ -3,5 +3,6 @@
         "lib/**/*.jar",
         "jsoup-1.13.1.jar",
         "gson-2.8.6.jar"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

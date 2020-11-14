@@ -97,7 +97,7 @@ then
   REPO="$BASEDIR"/repo
 fi
 
-CLASSPATH="$BASEDIR"/etc:"$REPO"/org/jsoup/jsoup/1.13.1/jsoup-1.13.1.jar:"$REPO"/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:"$REPO"/cybertrending/crawler/1.0-SNAPSHOT/crawler-1.0-SNAPSHOT.jar
+CLASSPATH="$BASEDIR"/etc:"$REPO"/org/jsoup/jsoup/1.13.1/jsoup-1.13.1.jar:"$REPO"/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:"$REPO"/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:"$REPO"/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:"$REPO"/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:"$REPO"/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:"$REPO"/cybertrending/crawler/1.0-SNAPSHOT/crawler-1.0-SNAPSHOT.jar
 
 ENDORSED_DIR=
 if [ -n "$ENDORSED_DIR" ] ; then
@@ -124,5 +124,5 @@ exec "$JAVACMD" $JAVA_OPTS  \
   -Dapp.repo="$REPO" \
   -Dapp.home="$BASEDIR" \
   -Dbasedir="$BASEDIR" \
-  crawler.Crawler \
+  Crawler \
   "$@"

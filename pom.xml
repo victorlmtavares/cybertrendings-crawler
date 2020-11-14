@@ -32,11 +32,41 @@
       <artifactId>gson</artifactId>
       <version>2.8.6</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.13</version>
+    </dependency>
   </dependencies>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>3.2.4</version>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>shade</goal>
+              </goals>
+              <configuration>
+                <filters>
+                  <filter>
+                    <artifact>*:*</artifact>
+                      <includes>
+                        <include>org/apache/http/client/HttpClient</include>
+                      </includes>
+                      <excludes>
+                      </excludes>
+                  </filter>
+                </filters>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
         <plugin>
         <groupId>org.codehaus.mojo</groupId>
           <artifactId>appassembler-maven-plugin</artifactId>
@@ -45,8 +75,8 @@
             <assembleDirectory>target</assembleDirectory>
             <programs>
                 <program>
-                    <mainClass>crawler.Crawler</mainClass>
-                    <id>crawler</id>
+                    <mainClass>Crawler</mainClass>
+                    <name>crawler</name>
                 </program>
             </programs>
           </configuration>

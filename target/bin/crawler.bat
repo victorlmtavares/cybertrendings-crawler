@@ -72,7 +72,7 @@ if "%JAVACMD%"=="" set JAVACMD=java
 
 if "%REPO%"=="" set REPO=%BASEDIR%\repo
 
-set CLASSPATH="%BASEDIR%"\etc;"%REPO%"\org\jsoup\jsoup\1.13.1\jsoup-1.13.1.jar;"%REPO%"\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;"%REPO%"\cybertrending\crawler\1.0-SNAPSHOT\crawler-1.0-SNAPSHOT.jar
+set CLASSPATH="%BASEDIR%"\etc;"%REPO%"\org\jsoup\jsoup\1.13.1\jsoup-1.13.1.jar;"%REPO%"\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;"%REPO%"\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;"%REPO%"\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;"%REPO%"\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;"%REPO%"\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;"%REPO%"\cybertrending\crawler\1.0-SNAPSHOT\crawler-1.0-SNAPSHOT.jar
 
 set ENDORSED_DIR=
 if NOT "%ENDORSED_DIR%" == "" set CLASSPATH="%BASEDIR%"\%ENDORSED_DIR%\*;%CLASSPATH%
@@ -82,7 +82,7 @@ if NOT "%CLASSPATH_PREFIX%" == "" set CLASSPATH=%CLASSPATH_PREFIX%;%CLASSPATH%
 @REM Reaching here means variables are defined and arguments have been captured
 :endInit
 
-%JAVACMD% %JAVA_OPTS%  -classpath %CLASSPATH% -Dapp.name="crawler" -Dapp.repo="%REPO%" -Dapp.home="%BASEDIR%" -Dbasedir="%BASEDIR%" crawler.Crawler %CMD_LINE_ARGS%
+%JAVACMD% %JAVA_OPTS%  -classpath %CLASSPATH% -Dapp.name="crawler" -Dapp.repo="%REPO%" -Dapp.home="%BASEDIR%" -Dbasedir="%BASEDIR%" Crawler %CMD_LINE_ARGS%
 if %ERRORLEVEL% NEQ 0 goto error
 goto end
 

@@ -1,7 +1,7 @@
-C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\crawler\src\main\java\crawler\Crawler.java
-C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\crawler\src\main\java\crawler\classes\TrendingTopic.java
-C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\crawler\src\main\java\crawler\robots\TwitterController.java
-C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\crawler\src\main\java\crawler\robots\NoticiaCrawlerController.java
-C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\crawler\src\main\java\crawler\robots\PostController.java
-C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\crawler\src\main\java\crawler\robots\GoogleController.java
-C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\crawler\src\main\java\crawler\classes\Noticia.java
+C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\cybertrendings-crawler\src\main\java\crawler\classes\TrendingTopic.java
+C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\cybertrendings-crawler\src\main\java\crawler\Crawler.java
+C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\cybertrendings-crawler\src\main\java\crawler\robots\GoogleController.java
+C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\cybertrendings-crawler\src\main\java\crawler\robots\NoticiaCrawlerController.java
+C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\cybertrendings-crawler\src\main\java\crawler\robots\PostController.java
+C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\cybertrendings-crawler\src\main\java\crawler\robots\TwitterController.java
+C:\Users\Victor\iCloudDrive\engenharia-projetos\desenvolvimento-de-software\projeto\cybertrendings-crawler\src\main\java\crawler\classes\Noticia.java

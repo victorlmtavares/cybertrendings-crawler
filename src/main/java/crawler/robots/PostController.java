@@ -34,6 +34,10 @@ public class PostController {
             || noticia.getUrlNoticia().indexOf("youtube.com") != -1 
             || noticia.getUrlNoticia().indexOf("facebook.com") != -1
             || noticia.getUrlNoticia().indexOf("wikipedia.org") != -1
+            || noticia.getUrlNoticia().indexOf("olx.com") != -1
+            || noticia.getUrlNoticia().indexOf("tweet") != -1
+            || noticia.getUrlNoticia().indexOf("mercadolivre.com") != -1
+            || noticia.getUrlNoticia().indexOf("usadobrasil.com") != -1
             || noticia.getMateria().indexOf('#'+noticia.getTagTwitter()) != -1
             || !noticia.getSanitizada())
                 continue;

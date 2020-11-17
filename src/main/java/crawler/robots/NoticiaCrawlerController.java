@@ -95,10 +95,10 @@ public class NoticiaCrawlerController {
                 this.noticia.setSanitizada(true);
             }
         } catch (Exception e) {
-            // TRATAR ERRO
             e.printStackTrace();
         }
     }
+    
     private List<String> prepararPreviewMateria(){
         String previewMateria = this.noticia.getMateria();
         String[] arrayPreviewSplitted2 = previewMateria
